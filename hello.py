@@ -3,11 +3,21 @@ from flask import Flask
 
 app = Flask(__name__)
 
-#ルーティング
-#可変のURL
-@app.route("/japan/<city>") #cityを変数に
-def japan(city): #cityを引数に
-    return f"Hello, { city } in Japan!" 
+html = ''' #文字列としてhtmlを記載
+<h1>サンプルHTML<h1>
+<ul>
+    <li>箇条書き1</li>
+    <li>箇条書き2</li>
+    <li>箇条書き3</li>
+</ul>
+'''
+
+#HTMLを書いてみる
+@app.route("/") 
+def hello(): 
+    return html #returnでhtml呼ぶ
+
+#pythonの中にHTMLを書くのはあまり良くない...→テンプレートを使う
 
 
 
