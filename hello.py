@@ -3,10 +3,21 @@ from flask import Flask
 from flask import render_template
 app = Flask(__name__)
 
+bullets = [
+    "箇条書き1",
+    "箇条書き2",
+    "箇条書き3",
+    "箇条書き4",
+    "箇条書き5",
+    "箇条書き6",
+    "箇条書き7",
+    "箇条書き8",
+]
+
 #テンプレートを用いる
-@app.route("/japan/<city>") 
-def hello(city): 
-    return render_template("hello.html", city=city) #左はhello.htmlで使うcity、右のcityは引数として用いられるcity
+@app.route("/") 
+def hello(): 
+    return render_template("hello.html", bullets=bullets)
 
 
 
