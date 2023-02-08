@@ -3,15 +3,11 @@ from flask import Flask
 
 app = Flask(__name__)
 
-#ルーティングの実施
-@app.route("/japan")
-def japan():
-    return "Hello Japan!" 
+#ルーティング
+#可変のURL
+@app.route("/japan/<city>") #cityを変数に
+def japan(city): #cityを引数に
+    return f"Hello, { city } in Japan!" 
 
-@app.route("/america")
-def america():
-    return "Hello America!" 
 
-@app.route("/world")
-def world():
-    return "Hello World!" 
+
