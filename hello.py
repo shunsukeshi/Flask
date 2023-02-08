@@ -3,11 +3,15 @@ from flask import Flask
 
 app = Flask(__name__)
 
-@app.route("/")
-def hello_world():
-    return "Hello World!" 
+#ルーティングの実施
+@app.route("/japan")
+def japan():
+    return "Hello Japan!" 
 
+@app.route("/america")
+def america():
+    return "Hello America!" 
 
-@app.route("/")
-def hello_world():
+@app.route("/world")
+def world():
     return "Hello World!" 
